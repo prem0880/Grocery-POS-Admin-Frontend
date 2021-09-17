@@ -36,6 +36,7 @@ export class ProductService {
 
 }
 export class Product{
+  id?:number;
   name?:string;
   image?:string;
   mrp?:number;
