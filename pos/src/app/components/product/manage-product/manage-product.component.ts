@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-manage-product',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageProductComponent implements OnInit {
 
-  constructor() { }
+  public viewProduct?:any=[];
 
-  ngOnInit(): void {
+  constructor(private router:Router,private productService:ProductService) { }
+
+   ngOnInit(): any {
+    this.productService.getAllProduct().subscribe( response => {
+      this.viewProduct = response;
+  });
+  }
+
+  deleteProduct(id:number,categoryId:number) {
+    this.productService.deleteProduct(id,categoryId).subscribe(response => {
+          console.log(response);
+          window.alert(response);
+  });
+  }
+
+  updateProduct(id:number) {
+    this.router.navigate(["updateProduct"],{state:{id:id}});
   }
 
 }
