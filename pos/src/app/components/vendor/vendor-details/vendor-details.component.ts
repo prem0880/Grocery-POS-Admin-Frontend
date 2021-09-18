@@ -1,6 +1,6 @@
-import { Vendor } from '../vendor';
+import { Vendor } from '../../../vendor';
 import { Component, OnInit, Input } from '@angular/core';
-import { VendorService } from '../vendor.service';
+import { VendorService } from '../../../vendor.service';
 import { VendorListComponent } from '../vendor-list/vendor-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -11,8 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class VendorDetailsComponent implements OnInit {
 
-  id: number;
-  vendor: Vendor;
+  id: number | any;
+  vendor: Vendor | any;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private vendorService: VendorService) { }

@@ -1,7 +1,7 @@
-import { VendorDetailsComponent } from './../vendor-details/vendor-details.component';
+import { VendorDetailsComponent } from '../vendor-details/vendor-details.component';
 import { Observable } from "rxjs";
-import { VendorService } from "./../vendor.service";
-import { Vendor } from "./../vendor";
+import { VendorService } from "../../../vendor.service";
+import { Vendor } from "../../../vendor";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ["./vendor-list.component.css"]
 })
 export class VendorListComponent implements OnInit {
-  vendors: Observable<Vendor[]>;
+  vendors: Observable<Vendor[]> | any;
 
   constructor(private vendorService: VendorService,
     private router: Router) {}

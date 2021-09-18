@@ -10,7 +10,7 @@ import { Product, ProductService } from 'src/app/services/product/product.servic
 export class AddProductComponent implements OnInit {
 
   public category:any=[];
-  public categoryObj: any=[] ;
+  public categoryObj: any=[];
 
   constructor(private categoryService:CategoryService,private productService:ProductService) {
    }

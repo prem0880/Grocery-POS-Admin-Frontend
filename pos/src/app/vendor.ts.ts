@@ -1,9 +1,9 @@
 export class Vendor {
-id:number;
-  name: string;
-  email: string;
-  phoneNumber: string;
+id:number | any;
+  name: string | any;
+  email: string | any;
+  phoneNumber: string | any;
 
-  company: string;
-  active: boolean;
+  company: string | any;
+  active: boolean | any;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Vendor } from '../vendor';
+import { Vendor } from '../../../vendor';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VendorService } from '../vendor.service';
+import { VendorService } from '../../../vendor.service';
 
 @Component({
   selector: 'app-update-vendor',
@@ -10,8 +10,8 @@ import { VendorService } from '../vendor.service';
 })
 export class UpdateVendorComponent implements OnInit {
 
-  id: number;
-  vendor: Vendor;
+  id: number | any;
+  vendor: Vendor | any;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private vendorService: VendorService) { }

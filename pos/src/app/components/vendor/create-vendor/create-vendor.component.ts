@@ -1,5 +1,5 @@
-import { VendorService } from '../vendor.service';
-import { Vendor } from '../vendor';
+import { VendorService } from '../../../vendor.service';
+import { Vendor } from '../../../vendor';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
