@@ -1,7 +1,19 @@
 <app-admin></app-admin>
 <div>
-    
-  <a href="http://localhost:8083/api/inventory/pdf" style="margin-left: 80%;" class="btn btn-primary">Generate Pdf</a>
+  <ul class="navbar-nav mr-auto" style="margin-left: 2%;">
+    <li ngbDropdown class="nav-item dropdown">
+      <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
+      <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+        <a class="dropdown-item" routerLink="/viewinventorybyhighprice">View By Highest Price</a>
+        <a class="dropdown-item" routerLink="/viewinventorybylowprice">View By Lowest Price</a>
+        <a class="dropdown-item" routerLink="/viewinventorybyquantity">View By Quantity</a>
+        <a class="dropdown-item" routerLink="/viewinventorybyname">View By Product</a>
+        <a class="dropdown-item" routerLink="/viewbyprice">View By Price</a>
+        <a class="dropdown-item" routerLink="/viewbydate">View By Date</a>
+      </div>
+    </li>
+  </ul>
+  
     <table class="table" >
         <thead>
             <tr>

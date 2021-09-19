@@ -1,4 +1,7 @@
-<h3>Create Vendor</h3>
+<app-admin>
+</app-admin>
+<div style="margin-left: 40%;">
+<h3 style="margin-left: 10%;">Create Vendor</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -20,12 +23,13 @@
       <label for="name">Company</label>
       <input type="text" class="form-control" id="company" required [(ngModel)]="vendor.company" name="company">
     </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+    <br/>
+    <button type="submit" style="margin-left: 40%;" class="btn btn-success">Submit</button>
   </form>
 </div>
 
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
   <!-- <button class="btn btn-success" (click)="newVendor()">Add</button> -->
+</div>
 </div>

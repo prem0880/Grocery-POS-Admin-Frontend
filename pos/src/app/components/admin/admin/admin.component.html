@@ -30,6 +30,15 @@
             <a class="dropdown-item" routerLink="/addinventory">Add Inventory</a>
             <a class="dropdown-item" routerLink="/viewinventory">View All Inventory</a>
             <a class="dropdown-item" routerLink="/manageinventory">Manage Inventory </a>
+            <a href="http://localhost:8083/api/inventory/pdf" class="dropdown-item">Generate Pdf</a>
+          </div>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vendor Operations</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" routerLink="/addvendors">Add Vendor</a>
+            <a class="dropdown-item" routerLink="/viewvendors">View Vendor</a>
           </div>
         </li>
       </ul>

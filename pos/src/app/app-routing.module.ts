@@ -8,9 +8,11 @@ import { ViewCategoryComponent } from './components/category/view-category/view-
 import { AddInventoryComponent } from './components/inventory/add-inventory/add-inventory.component';
 import { ManageInventoryComponent } from './components/inventory/manage-inventory/manage-inventory.component';
 import { UpdateInventoryComponent } from './components/inventory/update-inventory/update-inventory.component';
+import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
 import { ViewInventoryByHighPriceComponent } from './components/inventory/view-inventory-by-high-price/view-inventory-by-high-price.component';
 import { ViewInventoryByIdComponent } from './components/inventory/view-inventory-by-id/view-inventory-by-id.component';
 import { ViewInventoryByLowPriceComponent } from './components/inventory/view-inventory-by-low-price/view-inventory-by-low-price.component';
+import { ViewInventoryByPriceComponent } from './components/inventory/view-inventory-by-price/view-inventory-by-price.component';
 import { ViewInventoryByProductNameComponent } from './components/inventory/view-inventory-by-product-name/view-inventory-by-product-name.component';
 import { ViewInventoryByQuantityComponent } from './components/inventory/view-inventory-by-quantity/view-inventory-by-quantity.component';
 import { ViewInventoryComponent } from './components/inventory/view-inventory/view-inventory.component';
@@ -42,9 +44,11 @@ const routes: Routes = [
   {path:"viewinventorybylowprice",component:ViewInventoryByLowPriceComponent},
   {path:"viewinventorybyhighprice",component:ViewInventoryByHighPriceComponent},
   {path:"viewinventorybyquantity",component:ViewInventoryByQuantityComponent},
+  {path:"viewbyprice",component:ViewInventoryByPriceComponent},
+  {path:"viewbydate",component:ViewInventoryByDateComponent},
   { path: '', redirectTo: 'vendor', pathMatch: 'full' },
-  { path: 'vendors', component: VendorListComponent },
-  { path: 'add', component: CreateVendorComponent },
+  { path: 'viewvendors', component: VendorListComponent },
+  { path: 'addvendors', component: CreateVendorComponent },
   { path: 'update/:id', component: UpdateVendorComponent },
   { path: 'details/:id', component: VendorDetailsComponent },
 ];

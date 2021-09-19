@@ -1,5 +1,11 @@
 <app-admin></app-admin>
 <div>
+    <form #userForm="ngForm" >
+        <input type="button" class="btn btn-secondary" name="price" style="margin-left:20%;" value="0-100" (click)='getInventory(0,100)'>
+        <input type="button" class="btn btn-secondary" name="price"  style="margin-left:10%;" value="100-300" (click)='getInventory(100,300)'>
+        <input type="button" class="btn btn-secondary" name="price" style="margin-left:10%;" value="300-500" (click)='getInventory(300,500)'>
+        <input type="button" class="btn btn-secondary" name="price" style="margin-left:10%;" value="500-1000" (click)='getInventory(500,1000)'>
+    </form>
     <ul class="navbar-nav mr-auto" style="margin-left: 2%;">
         <li ngbDropdown class="nav-item dropdown">
           <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
@@ -43,3 +49,5 @@
       </table>
       
 </div>
+
+

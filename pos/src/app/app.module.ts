@@ -30,6 +30,8 @@ import { ViewInventoryByProductNameComponent } from './components/inventory/view
 import { ViewInventoryByQuantityComponent } from './components/inventory/view-inventory-by-quantity/view-inventory-by-quantity.component';
 import { ViewInventoryByLowPriceComponent } from './components/inventory/view-inventory-by-low-price/view-inventory-by-low-price.component';
 import { ViewInventoryByHighPriceComponent } from './components/inventory/view-inventory-by-high-price/view-inventory-by-high-price.component';
+import { ViewInventoryByPriceComponent } from './components/inventory/view-inventory-by-price/view-inventory-by-price.component';
+import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ViewInventoryByHighPriceComponent } from './components/inventory/view-i
     ViewInventoryByProductNameComponent,
     ViewInventoryByQuantityComponent,
     ViewInventoryByLowPriceComponent,
-    ViewInventoryByHighPriceComponent
+    ViewInventoryByHighPriceComponent,
+    ViewInventoryByPriceComponent,
+    ViewInventoryByDateComponent
   ],
   imports: [
     BrowserModule,
