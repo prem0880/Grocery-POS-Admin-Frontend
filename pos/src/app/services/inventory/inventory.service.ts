@@ -16,7 +16,8 @@ export class InventoryService {
       quantity : inventory.quantity,
       manufacturedDate : inventory.manufacturedDate,
       purchasedPrice : inventory.purchasedPrice,
-      tax : inventory.tax
+      tax : inventory.tax,
+      expiryDate:inventory.expiryDate
     }
     return this.http.post("http://localhost:8083/api/product/"+inventory.product+"/vendor/"+inventory.vendor+"/inventory", newInvent,{headers, responseType : 'text'} );
   }
@@ -24,6 +25,11 @@ export class InventoryService {
   getAllInventory() : Observable<any> {
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.http.get<Inventory>("http://localhost:8083/api/inventory");
+  }
+
+  generatePdf() : Observable<any> {
+    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.http.get<Inventory>("http://localhost:8083/api/inventory/pdf");
   }
 
   deleteInventory(id:any) {
@@ -82,4 +88,5 @@ export class Inventory {
   expiryDate?:Date;
   product?:any;
   vendor?:any;
+  addedDate?:Date;
 }

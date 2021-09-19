@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Inventory, InventoryService } from 'src/app/services/inventory/inventory.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ViewInventoryComponent implements OnInit {
 
   public inventory:any=[];
 
-  constructor(private inventoryService : InventoryService) { }
+  constructor(private inventoryService : InventoryService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -18,5 +19,7 @@ export class ViewInventoryComponent implements OnInit {
       this.inventory = res;
     });
   }
+
+ 
 
 }

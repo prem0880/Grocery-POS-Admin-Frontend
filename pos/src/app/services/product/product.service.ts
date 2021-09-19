@@ -19,7 +19,7 @@ export class ProductService {
 
   getAllProduct() : Observable<any>{
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.http.get<Product>(`${this.baseUrl}`);
+    return this.http.get<Product>(`http://localhost:8083/api/products`);
   }
 
   deleteProduct(id:number,cid:number){
