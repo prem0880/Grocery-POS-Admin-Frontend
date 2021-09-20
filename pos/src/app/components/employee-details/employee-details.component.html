@@ -1,5 +1,6 @@
 <app-admin></app-admin>
-<h2>Employee Details</h2> 
+<div style="text-align: center;">
+<h2>Staff Details for id: {{employee.id}}</h2> 
 
 <hr/>
 <div *ngIf="employee">
@@ -30,5 +31,5 @@
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
-
+</div>
 

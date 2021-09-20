@@ -53,9 +53,11 @@ const routes: Routes = [
   { path: 'addvendors', component: CreateVendorComponent },
   { path: 'update/:id', component: UpdateVendorComponent },
   { path: 'details/:id', component: VendorDetailsComponent },
+  { path: 'vendorList', component: VendorListComponent },
   {path:'createEmployee',component:CreateEmployeeComponent},
   {path:'employeeList',component:EmployeeListComponent},
-  {path:'updateEmployee',component:UpdateEmployeeComponent}
+  {path:'updateEmployee/:id',component:UpdateEmployeeComponent},
+  {path:'employeeDetails/:id',component:EmployeeDetailsComponent}
 ];
 
 @NgModule({

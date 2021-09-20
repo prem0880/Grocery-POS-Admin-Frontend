@@ -1,33 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Employee } from './employee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  private baseUrl = 'http://localhost:8081/api';
+  private baseUrl = 'http://localhost:8083/api/employee';
 
   constructor(private http: HttpClient) { }
 
   getEmployee(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getbyid-employee/{id}`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createEmployee(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/add-employee`, employee);
+  createEmployee(employee: Employee): Observable<any> {
+    employee.password=employee.phoneNumber;
+    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.http.post(`${this.baseUrl}`, employee,{headers, responseType : 'text'});
   }
 
-  updateEmployee(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/update-employee/${id}`, value);
+  updateEmployee(id: number, employee: any): Observable<any> {
+    employee.password=employee.phoneNumber;
+    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.http.put(`${this.baseUrl}/${id}`, employee,{headers, responseType : 'text'});
   }
 
   deleteEmployee(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete-employee/${id}`, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
   getEmployeeList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/employee`);
+    return this.http.get(`${this.baseUrl}`);
   }
 }

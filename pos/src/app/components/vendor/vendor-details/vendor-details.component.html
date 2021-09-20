@@ -1,9 +1,12 @@
 <app-admin></app-admin>
-
-<h2>Vendor Details</h2> 
+<div style="text-align: center;">
+<h2>Vendor Details for id: {{vendor.id}}</h2> 
 
 <hr/>
 <div *ngIf="vendor">
+  <div>
+    <label><b>ID: </b></label> {{vendor.id}}
+  </div>
   <div>
     <label><b>Name: </b></label> {{vendor.name}}
   </div>
@@ -24,4 +27,4 @@
 <br>
 <button (click)="list()" class="btn btn-primary">Back to Vendor List</button><br>
 
-
+</div>

@@ -1,43 +1,32 @@
 <app-admin></app-admin>
-<h3>Create Employee</h3>
-<div [hidden]="submitted" style="width: 400px;">
-  <form #userForm="ngForm" (ngSubmit)='addEmployee(userForm.value)'>
+<h2 style="margin-left: 40%;">Create Staff</h2>
+<div [hidden]="submitted" >
+  <form #userForm="ngForm" (ngSubmit)='addEmployee(userForm.value)' style="margin-left: 30%;margin-right: 30%;">
+   
     <div class="form-group">
-      <label for="name">ID</label>
-      <input type="number" class="form-control"  required ngModel name="id">
-    </div>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control"  required ngModel name="name">
+      <label for="name">Enter name</label><br>
+      <input type="text" class="form-control"  placeholder="Enter name" required ngModel name="name">
     </div>
 
     <div class="form-group">
-      <label for="name">Role</label>
-      <input type="text" class="form-control"  required ngModel name="role">
+      <label for="name">Enter role</label><br>
+      <input type="text" class="form-control" placeholder="Enter Role" required ngModel name="role">
     </div>
 
     <div class="form-group">
-      <label for="name">Email</label>
-      <input type="email" class="form-control"  required ngModel name="email">
+      <label for="name">Enter email</label><br>
+      <input type="email" class="form-control" placeholder="Enter Email" required ngModel name="email">
     </div>
  <div class="form-group">
-      <label for="name">PhoneNumber</label>
-      <input type="number" class="form-control"  required ngModel name="phoneNumber">
-    </div>
- <div class="form-group">
-      <label for="name">Password</label>
-      <input type="password" class="form-control"  required ngModel name="password">
+      <label for="name">Enter phone number</label><br>
+      <input type="number" class="form-control" placeholder="Enter Phone number" required ngModel name="phoneNumber">
     </div>
     <div class="form-group">
-      <label for="name">Address</label>
-      <input type="text" class="form-control"  required ngModel name="address">
+      <label for="name">Enter address</label><br>
+      <input type="text" class="form-control" placeholder="Enter address"  required ngModel name="address">
     </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+    <br>
+    <button style="margin-left: 40%;" [disabled]="userForm.invalid" type="submit" class="btn btn-success">Create Staff</button>
   </form>
 </div>
 
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
-</div>
