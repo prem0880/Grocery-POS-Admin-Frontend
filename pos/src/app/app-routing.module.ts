@@ -5,6 +5,9 @@ import { AddCategoryComponent } from './components/category/add-category/add-cat
 import { ManageCategoryComponent } from './components/category/manage-category/manage-category.component';
 import { UpdateCategoryComponent } from './components/category/update-category/update-category.component';
 import { ViewCategoryComponent } from './components/category/view-category/view-category.component';
+import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { AddInventoryComponent } from './components/inventory/add-inventory/add-inventory.component';
 import { ManageInventoryComponent } from './components/inventory/manage-inventory/manage-inventory.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
@@ -19,6 +22,7 @@ import { AddProductComponent } from './components/product/add-product/add-produc
 import { ManageProductComponent } from './components/product/manage-product/manage-product.component';
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
 import { ViewProductComponent } from './components/product/view-product/view-product.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { CreateVendorComponent } from './components/vendor/create-vendor/create-vendor.component';
 import { UpdateVendorComponent } from './components/vendor/update-vendor/update-vendor.component';
 import { VendorDetailsComponent } from './components/vendor/vendor-details/vendor-details.component';
@@ -49,6 +53,9 @@ const routes: Routes = [
   { path: 'addvendors', component: CreateVendorComponent },
   { path: 'update/:id', component: UpdateVendorComponent },
   { path: 'details/:id', component: VendorDetailsComponent },
+  {path:'createEmployee',component:CreateEmployeeComponent},
+  {path:'employeeList',component:EmployeeListComponent},
+  {path:'updateEmployee',component:UpdateEmployeeComponent}
 ];
 
 @NgModule({
