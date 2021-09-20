@@ -1,0 +1,21 @@
+<app-admin></app-admin>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let viewcustomer of viewCustomer">
+                <td>{{viewcustomer.phoneNumber}}</td>
+                <td>{{viewcustomer.name}}</td>
+                <td>{{viewcustomer.email}}</td>
+              </tr>
+        </tbody>
+      </table>
+      
+</div>
+

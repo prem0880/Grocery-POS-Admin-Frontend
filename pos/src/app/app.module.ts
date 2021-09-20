@@ -38,6 +38,7 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { ViewCustomerComponent } from './components/staff/customer/view-customer/view-customer.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
     EmployeeListComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    ViewCustomerComponent
   ],
   imports: [
     BrowserModule,
