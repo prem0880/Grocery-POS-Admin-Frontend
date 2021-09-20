@@ -31,6 +31,7 @@ import { ViewInventoryByLowPriceComponent } from './components/inventory/view-in
 import { ViewInventoryByHighPriceComponent } from './components/inventory/view-inventory-by-high-price/view-inventory-by-high-price.component';
 import { ViewInventoryByPriceComponent } from './components/inventory/view-inventory-by-price/view-inventory-by-price.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { ViewInventoryByDateComponent } from './components/inventory/view-invent
     HttpClientModule
     
   ],
-  providers: [CategoryService,ProductService,InventoryService],
+  providers: [CategoryService,ProductService,InventoryService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

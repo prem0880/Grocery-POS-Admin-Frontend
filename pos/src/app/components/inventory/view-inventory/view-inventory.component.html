@@ -30,8 +30,7 @@
             </tr>
         </thead>
         <tbody *ngFor="let i of inventory">
-      
-            <tr *ngIf="i.expiryDate >= today">
+            <tr *ngIf="!(i.expiryDate>=date)" class="text-warning">
                 <td>{{i.id}}</td>
                 <td>{{i.product.name}}</td>
                 <td>{{i.vendor.company}} - {{i.vendor.name}}</td>
@@ -42,7 +41,7 @@
                 <td>{{i.expiryDate}}</td>
                 <td>{{i.addedDate}}</td>
               </tr>
-            <tr *ngIf="i.expiryDate < today" class="text-warning">
+              <tr *ngIf="i.expiryDate>=date">
                 <td>{{i.id}}</td>
                 <td>{{i.product.name}}</td>
                 <td>{{i.vendor.company}} - {{i.vendor.name}}</td>
