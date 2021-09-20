@@ -32,6 +32,8 @@ import { ViewInventoryByHighPriceComponent } from './components/inventory/view-i
 import { ViewInventoryByPriceComponent } from './components/inventory/view-inventory-by-price/view-inventory-by-price.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
 import { DatePipe } from '@angular/common';
+import { DashboardComponent } from './components/staff/dashboard/dashboard.component';
+import { AddCustomerComponent } from './components/staff/customer/add-customer/add-customer.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { DatePipe } from '@angular/common';
     ViewInventoryByLowPriceComponent,
     ViewInventoryByHighPriceComponent,
     ViewInventoryByPriceComponent,
-    ViewInventoryByDateComponent
+    ViewInventoryByDateComponent,
+    DashboardComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,
