@@ -1,5 +1,6 @@
 <app-admin></app-admin>
 <div>
+  <h6 class="text-warning" style="margin-left: 2%;">* Products to be expired are highlighted with yellow color</h6>
   <ul class="navbar-nav mr-auto" style="margin-left: 2%;">
     <li ngbDropdown class="nav-item dropdown">
       <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
@@ -28,8 +29,20 @@
                 <th>Added Date</th>
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let i of inventory">
+        <tbody *ngFor="let i of inventory">
+      
+            <tr *ngIf="i.expiryDate >= today">
+                <td>{{i.id}}</td>
+                <td>{{i.product.name}}</td>
+                <td>{{i.vendor.company}} - {{i.vendor.name}}</td>
+                <td>{{i.quantity}}</td>
+                <td>{{i.purchasedPrice}}</td>
+                <td>{{i.tax}}</td>
+                <td>{{i.manufacturedDate}}</td>
+                <td>{{i.expiryDate}}</td>
+                <td>{{i.addedDate}}</td>
+              </tr>
+            <tr *ngIf="i.expiryDate < today" class="text-warning">
                 <td>{{i.id}}</td>
                 <td>{{i.product.name}}</td>
                 <td>{{i.vendor.company}} - {{i.vendor.name}}</td>

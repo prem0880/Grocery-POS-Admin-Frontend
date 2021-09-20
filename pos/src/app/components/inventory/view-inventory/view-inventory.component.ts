@@ -10,7 +10,7 @@ import { Inventory, InventoryService } from 'src/app/services/inventory/inventor
 export class ViewInventoryComponent implements OnInit {
 
   public inventory:any=[];
-
+  public today:Date=new Date();
   constructor(private inventoryService : InventoryService,private router:Router) { }
 
   ngOnInit(): void {

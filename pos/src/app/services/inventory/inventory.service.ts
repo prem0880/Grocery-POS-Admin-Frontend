@@ -36,12 +36,6 @@ export class InventoryService {
     const headers =new HttpHeaders().set('Content_Type', 'application/json');
     return this.http.delete("http://localhost:8083/api/inventory/"+id,{headers, responseType : 'text'});
   }
-
-  updateInventory(id:any, inventory : Inventory) {
-    const headers =new HttpHeaders().set('Content_Type', 'application/json');
-    return this.http.put("http://localhost:8083/api/inventory/"+id, inventory, {headers, responseType : 'text'})
-  }
-
   getInventoryById(id:any) : Observable<any> {
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.http.get<Inventory>("http://localhost:8083/api/inventory/"+id);

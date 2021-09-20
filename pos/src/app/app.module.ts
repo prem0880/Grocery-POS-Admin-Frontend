@@ -24,7 +24,6 @@ import { AdminComponent } from './components/admin/admin/admin.component';
 import { AddInventoryComponent } from './components/inventory/add-inventory/add-inventory.component';
 import { ViewInventoryComponent } from './components/inventory/view-inventory/view-inventory.component';
 import { ManageInventoryComponent } from './components/inventory/manage-inventory/manage-inventory.component';
-import { UpdateInventoryComponent } from './components/inventory/update-inventory/update-inventory.component';
 import { ViewInventoryByIdComponent } from './components/inventory/view-inventory-by-id/view-inventory-by-id.component';
 import { ViewInventoryByProductNameComponent } from './components/inventory/view-inventory-by-product-name/view-inventory-by-product-name.component';
 import { ViewInventoryByQuantityComponent } from './components/inventory/view-inventory-by-quantity/view-inventory-by-quantity.component';
@@ -52,7 +51,6 @@ import { ViewInventoryByDateComponent } from './components/inventory/view-invent
     AddInventoryComponent,
     ViewInventoryComponent,
     ManageInventoryComponent,
-    UpdateInventoryComponent,
     ViewInventoryByIdComponent,
     ViewInventoryByProductNameComponent,
     ViewInventoryByQuantityComponent,

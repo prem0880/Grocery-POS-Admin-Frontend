@@ -14,6 +14,9 @@ export class ProductService {
 
   createProduct(product:Product){
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    product.stock=0;
+    product.mrp=0.0;
+    product.tax=0.0;
     return this.http.post(`${this.baseUrl}`, product,{headers, responseType : 'text'} );
   }
 

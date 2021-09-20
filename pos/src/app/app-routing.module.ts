@@ -7,7 +7,6 @@ import { UpdateCategoryComponent } from './components/category/update-category/u
 import { ViewCategoryComponent } from './components/category/view-category/view-category.component';
 import { AddInventoryComponent } from './components/inventory/add-inventory/add-inventory.component';
 import { ManageInventoryComponent } from './components/inventory/manage-inventory/manage-inventory.component';
-import { UpdateInventoryComponent } from './components/inventory/update-inventory/update-inventory.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
 import { ViewInventoryByHighPriceComponent } from './components/inventory/view-inventory-by-high-price/view-inventory-by-high-price.component';
 import { ViewInventoryByIdComponent } from './components/inventory/view-inventory-by-id/view-inventory-by-id.component';
@@ -38,7 +37,6 @@ const routes: Routes = [
   {path:"updateProduct",component:UpdateProductComponent},
   {path:"viewinventory",component:ViewInventoryComponent},
   {path:"manageinventory",component:ManageInventoryComponent},
-  {path:"updateinventory",component:UpdateInventoryComponent},
   {path:"viewinventorybyid",component:ViewInventoryByIdComponent},
   {path:"viewinventorybyname",component:ViewInventoryByProductNameComponent},
   {path:"viewinventorybylowprice",component:ViewInventoryByLowPriceComponent},
