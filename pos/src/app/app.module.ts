@@ -32,10 +32,13 @@ import { ViewInventoryByHighPriceComponent } from './components/inventory/view-i
 import { ViewInventoryByPriceComponent } from './components/inventory/view-inventory-by-price/view-inventory-by-price.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
 import { DatePipe } from '@angular/common';
+import { DashboardComponent } from './components/staff/dashboard/dashboard.component';
+import { AddCustomerComponent } from './components/staff/customer/add-customer/add-customer.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { ViewCustomerComponent } from './components/staff/customer/view-customer/view-customer.component';
 
 @NgModule({
   declarations: [
@@ -63,10 +66,13 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     ViewInventoryByHighPriceComponent,
     ViewInventoryByPriceComponent,
     ViewInventoryByDateComponent,
+    DashboardComponent,
+    AddCustomerComponent,
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
     EmployeeListComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    ViewCustomerComponent
   ],
   imports: [
     BrowserModule,
