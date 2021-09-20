@@ -11,30 +11,26 @@ import { EmployeeService } from 'src/app/services/employee/employee.service';
 })
 export class CreateEmployeeComponent implements OnInit {
 
-  employee: Employee = new Employee();
   submitted = false;
-
   constructor(private employeeService: EmployeeService,
     private router: Router) { }
 
   ngOnInit() {
   }
 
-  newEmployee(): void {
-    this.submitted = false;
-    this.employee = new Employee();
-  }
+
 
   addEmployee(employee:Employee){
     this.employeeService
     .createEmployee(employee).subscribe(data => {
-      console.log(data)
-      this.employee = new Employee();
+     window.alert(data);
       this.gotoList();
-    });
+    },
+    error => window.alert(error.error)
+    );
   }
 
   gotoList() {
-    this.router.navigate(['/employee']);
+    this.router.navigate(['/employeeList']);
   }
 }

@@ -30,6 +30,6 @@ export class VendorDetailsComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['vendors']);
+    this.router.navigate(['/vendorList']);
   }
 }
