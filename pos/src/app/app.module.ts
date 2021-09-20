@@ -39,6 +39,11 @@ import { UpdateEmployeeComponent } from './components/update-employee/update-emp
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { ViewCustomerComponent } from './components/staff/customer/view-customer/view-customer.component';
+import { AddCountryComponent } from './components/country/add-country/add-country.component';
+import { ViewCountryComponent } from './components/country/view-country/view-country.component';
+import { AddStateComponent } from './components/state/add-state/add-state.component';
+import { ViewStateComponent } from './components/state/view-state/view-state.component';
+import { AddAddressComponent } from './components/staff/address/add-address/add-address.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +77,12 @@ import { ViewCustomerComponent } from './components/staff/customer/view-customer
     UpdateEmployeeComponent,
     EmployeeListComponent,
     EmployeeDetailsComponent,
-    ViewCustomerComponent
+    ViewCustomerComponent,
+    AddCountryComponent,
+    ViewCountryComponent,
+    AddStateComponent,
+    ViewStateComponent,
+    AddAddressComponent
   ],
   imports: [
     BrowserModule,

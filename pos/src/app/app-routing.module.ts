@@ -5,6 +5,8 @@ import { AddCategoryComponent } from './components/category/add-category/add-cat
 import { ManageCategoryComponent } from './components/category/manage-category/manage-category.component';
 import { UpdateCategoryComponent } from './components/category/update-category/update-category.component';
 import { ViewCategoryComponent } from './components/category/view-category/view-category.component';
+import { AddCountryComponent } from './components/country/add-country/add-country.component';
+import { ViewCountryComponent } from './components/country/view-country/view-country.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
@@ -22,6 +24,10 @@ import { AddProductComponent } from './components/product/add-product/add-produc
 import { ManageProductComponent } from './components/product/manage-product/manage-product.component';
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
 import { ViewProductComponent } from './components/product/view-product/view-product.component';
+import { AddAddressComponent } from './components/staff/address/add-address/add-address.component';
+import { AddCustomerComponent } from './components/staff/customer/add-customer/add-customer.component';
+import { AddStateComponent } from './components/state/add-state/add-state.component';
+import { ViewStateComponent } from './components/state/view-state/view-state.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { CreateVendorComponent } from './components/vendor/create-vendor/create-vendor.component';
 import { UpdateVendorComponent } from './components/vendor/update-vendor/update-vendor.component';
@@ -57,7 +63,13 @@ const routes: Routes = [
   {path:'createEmployee',component:CreateEmployeeComponent},
   {path:'employeeList',component:EmployeeListComponent},
   {path:'updateEmployee/:id',component:UpdateEmployeeComponent},
-  {path:'employeeDetails/:id',component:EmployeeDetailsComponent}
+  {path:'employeeDetails/:id',component:EmployeeDetailsComponent},
+  {path:'addcountry',component:AddCountryComponent},
+  {path:'viewcountry',component:ViewCountryComponent},
+  {path:'addstate',component:AddStateComponent},
+  {path:'viewstate',component:ViewStateComponent},
+  {path:'addaddress/:id',component:AddAddressComponent},
+  {path:'addcustomer',component:AddCustomerComponent}
 ];
 
 @NgModule({

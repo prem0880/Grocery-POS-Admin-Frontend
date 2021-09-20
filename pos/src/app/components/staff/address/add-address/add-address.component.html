@@ -1,0 +1,30 @@
+<app-dashboard></app-dashboard>
+<div>
+    <form #userForm="ngForm" (ngSubmit)='addaddress(userForm.value)' style=" margin-left: 400px;">
+        <h3 style="margin-left: 130px;">Add Address</h3>
+        <div class="form-group col-md-6">
+            <label for="producturl">Enter Address Line</label>
+            <input type="number" class="form-control" name="addressline" placeholder="Enter Address Line"  ngModel required>
+          </div>
+          <br>
+          <div>
+            <label>Enter the Country Name</label>
+            <div class="col-sm-6"> 
+                <select required class="form-group col-md-6"  name="country" (onchange) = "getstate(country)"ngModel >
+                    <option value="" selected disabled>Select Country</option>
+                    <option *ngFor = "let c of country" [value]=c.id>{{ c.name }}</option>
+                  </select>
+            </div>
+        </div>
+        <div>
+            <label>Enter the State Name</label>
+            <div class="col-sm-6"> 
+                <select required class="form-group col-md-6"  name="state" ngModel >
+                    <option value="" selected disabled>Select State</option>
+                    <option *ngFor = "let c of state" [value]=c.id>{{ c.name }}</option>
+                  </select>
+            </div>
+        </div>
+      <button type="submit" style="margin-left: 150px;" class="btn btn-primary">Create</button>
+      </form>
+</div>
