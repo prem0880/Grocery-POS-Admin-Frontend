@@ -43,6 +43,6 @@ export class UpdateVendorComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/vendors']);
+    this.router.navigate(['/vendorList']);
   }
 }

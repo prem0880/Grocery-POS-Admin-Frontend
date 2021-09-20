@@ -28,6 +28,7 @@ export class CreateVendorComponent implements OnInit {
     this.vendorService
     .createVendor(this.vendor).subscribe(data => {
       console.log(data)
+      window.alert(data);
       this.vendor = new Vendor();
       this.gotoList();
     }, 
