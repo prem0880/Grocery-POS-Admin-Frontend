@@ -32,6 +32,10 @@ import { ViewInventoryByHighPriceComponent } from './components/inventory/view-i
 import { ViewInventoryByPriceComponent } from './components/inventory/view-inventory-by-price/view-inventory-by-price.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
 import { DatePipe } from '@angular/common';
+import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { DatePipe } from '@angular/common';
     ViewInventoryByLowPriceComponent,
     ViewInventoryByHighPriceComponent,
     ViewInventoryByPriceComponent,
-    ViewInventoryByDateComponent
+    ViewInventoryByDateComponent,
+    CreateEmployeeComponent,
+    UpdateEmployeeComponent,
+    EmployeeListComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
