@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AddressService } from 'src/app/services/address/address.service';
 import { CountryService } from 'src/app/services/country/country.service';
 import { StateService } from 'src/app/services/state/state.service';
 
@@ -13,25 +14,28 @@ export class AddAddressComponent implements OnInit {
   public id : any;
   public state  :any=[];
   public country : any=[];
-  constructor(private router : Router, private route: ActivatedRoute, private stateser : StateService, private countSer  :CountryService) { 
+  constructor(private router : Router, private route: ActivatedRoute, private stateser : StateService, private countSer  :CountryService, private addressSer : AddressService) { 
     
   }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
     this.countSer.get().subscribe((res)=>{
       this.country = res;
     })
   }
 
-  getstate(id:any) {
-    console.log(id);
-    this.stateser.get(id).subscribe((res)=>{
+  getstate(count:any) {
+    this.stateser.get(count).subscribe((res)=>{
       this.state = res;
     })
   }
   addaddress(value:any) {
-    
+    value.pinCode = Number(value.pinCode);
+    this.addressSer.create(value, this.id as any as number).subscribe((res)=>{
+      window.alert(res);
+    })
   }
 
 }
