@@ -10,6 +10,7 @@ import { ViewCountryComponent } from './components/country/view-country/view-cou
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { IndexcomponentComponent } from './components/indexcomponent/indexcomponent.component';
 import { AddInventoryComponent } from './components/inventory/add-inventory/add-inventory.component';
 import { ManageInventoryComponent } from './components/inventory/manage-inventory/manage-inventory.component';
 import { ViewInventoryByDateComponent } from './components/inventory/view-inventory-by-date/view-inventory-by-date.component';
@@ -28,6 +29,8 @@ import { AddAddressComponent } from './components/staff/address/add-address/add-
 import { AddCustomerComponent } from './components/staff/customer/add-customer/add-customer.component';
 import { ViewCustomerComponent } from './components/staff/customer/view-customer/view-customer.component';
 import { DashboardComponent } from './components/staff/dashboard/dashboard.component';
+import { AddOrderComponent } from './components/staff/order/add-order/add-order.component';
+import { ProcessOrderComponent } from './components/staff/order/process-order/process-order.component';
 import { AddStateComponent } from './components/state/add-state/add-state.component';
 import { ViewStateComponent } from './components/state/view-state/view-state.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
@@ -73,7 +76,10 @@ const routes: Routes = [
   {path:'addaddress/:id',component:AddAddressComponent},
   {path:'addcustomer',component:AddCustomerComponent},
   {path:'viewcustomer',component:ViewCustomerComponent},
-  {path:'staff',component:DashboardComponent}
+  {path:'staff',component:DashboardComponent},
+  {path:'add-order/:id',component:AddOrderComponent},
+  {path:'process-order',component:ProcessOrderComponent},
+  {path:'**',component:IndexcomponentComponent}
 ];
 
 @NgModule({

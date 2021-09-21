@@ -18,7 +18,7 @@ import { CategoryService } from './services/category/category.service';
 import { ProductService } from './services/product/product.service';
 import { InventoryService } from './services/inventory/inventory.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminComponent } from './components/admin/admin/admin.component';
 import { AddInventoryComponent } from './components/inventory/add-inventory/add-inventory.component';
@@ -44,6 +44,9 @@ import { ViewCountryComponent } from './components/country/view-country/view-cou
 import { AddStateComponent } from './components/state/add-state/add-state.component';
 import { ViewStateComponent } from './components/state/view-state/view-state.component';
 import { AddAddressComponent } from './components/staff/address/add-address/add-address.component';
+import { AddOrderComponent } from './components/staff/order/add-order/add-order.component';
+import { ProcessOrderComponent } from './components/staff/order/process-order/process-order.component';
+import { IndexcomponentComponent } from './components/indexcomponent/indexcomponent.component';
 
 @NgModule({
   declarations: [
@@ -82,14 +85,18 @@ import { AddAddressComponent } from './components/staff/address/add-address/add-
     ViewCountryComponent,
     AddStateComponent,
     ViewStateComponent,
-    AddAddressComponent
+    AddAddressComponent,
+    AddOrderComponent,
+    ProcessOrderComponent,
+    IndexcomponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
   ],
   providers: [CategoryService,ProductService,InventoryService,DatePipe],
