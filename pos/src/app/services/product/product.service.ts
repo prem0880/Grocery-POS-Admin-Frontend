@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Category } from '../category/category.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,13 @@ export class ProductService {
   }
 
   getAllProduct() : Observable<any>{
-    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+  
     return this.http.get<Product>(`http://localhost:8083/api/products`);
+  }
+
+  getProductById(id:number) : Observable<any>{
+  
+    return this.http.get(`http://localhost:8083/api/product/${id}`);
   }
 
   deleteProduct(id:number,cid:number){
@@ -31,7 +37,7 @@ export class ProductService {
   }
 
   updateProduct(id:number,product:Product){
-    console.log(product);
+   
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.http.put(`${this.baseUrl}/${id}`, product,{ headers, responseType: 'text'});
   }
@@ -47,5 +53,5 @@ export class Product{
   description?:string;
   stock?:number;
   tax?:number;
-  category:any;
+  category?:Category;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { Product, ProductService } from 'src/app/services/product/product.service';
 
@@ -12,7 +13,7 @@ export class AddProductComponent implements OnInit {
   public category:any=[];
   public categoryObj: any=[];
 
-  constructor(private categoryService:CategoryService,private productService:ProductService) {
+  constructor(private categoryService:CategoryService,private productService:ProductService,private router:Router) {
    }
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class AddProductComponent implements OnInit {
     console.log(product);
     this.productService.createProduct(product).subscribe((response) => {
       window.alert(response);
+      this.router.navigate(['/viewProduct']);
     })
   }
 }
