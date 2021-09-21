@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -19,6 +19,13 @@ export class CustomerService {
   getAllCustomer():Observable<any>{
     return this.http.get<Customer>(`${this.baseUrl}`);
   }
+
+  getCustomerById(id:any):Observable<any>{
+    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.http.get<Customer>(`${this.baseUrl}/${id}`);
+  }
+
+  
 
 }
 export class Customer{

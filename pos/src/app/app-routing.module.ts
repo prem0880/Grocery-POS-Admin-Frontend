@@ -26,6 +26,8 @@ import { UpdateProductComponent } from './components/product/update-product/upda
 import { ViewProductComponent } from './components/product/view-product/view-product.component';
 import { AddAddressComponent } from './components/staff/address/add-address/add-address.component';
 import { AddCustomerComponent } from './components/staff/customer/add-customer/add-customer.component';
+import { ViewCustomerComponent } from './components/staff/customer/view-customer/view-customer.component';
+import { DashboardComponent } from './components/staff/dashboard/dashboard.component';
 import { AddStateComponent } from './components/state/add-state/add-state.component';
 import { ViewStateComponent } from './components/state/view-state/view-state.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
@@ -69,7 +71,9 @@ const routes: Routes = [
   {path:'addstate',component:AddStateComponent},
   {path:'viewstate',component:ViewStateComponent},
   {path:'addaddress/:id',component:AddAddressComponent},
-  {path:'addcustomer',component:AddCustomerComponent}
+  {path:'addcustomer',component:AddCustomerComponent},
+  {path:'viewcustomer',component:ViewCustomerComponent},
+  {path:'staff',component:DashboardComponent}
 ];
 
 @NgModule({
