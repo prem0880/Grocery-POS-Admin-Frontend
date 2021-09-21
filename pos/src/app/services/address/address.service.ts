@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Customer } from '../staff/customer/customer.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,10 @@ export class AddressService {
 }
 
 export class Address{
-  id?:number;
-  addressLine?:string;
-  city?:string;
-  pinCode?:number;
-  state?:any;
+  public id?:number;
+  public addressLine?:string;
+  public city?:string;
+  public pinCode?:number;
+  public state?:any;
+  public customer?:Customer
 }

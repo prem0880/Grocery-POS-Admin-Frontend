@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Address } from 'src/app/services/address/address';
+import {  AddressService } from 'src/app/services/address/address.service';
+import { Customer, CustomerService } from 'src/app/services/staff/customer/customer.service';
 import { Order } from 'src/app/services/staff/order/order';
 import { OrderService } from 'src/app/services/staff/order/order.service';
-
 
 @Component({
   selector: 'app-process-order',
@@ -14,18 +16,34 @@ export class ProcessOrderComponent implements OnInit {
   public order:Order|any 
   public orderDetail:Order|any
   public orderDetails:Order|any
-  public totalAmount:Number|any
+  public phoneNumber:Number|any
+  public address:Address|any
+  public customer:Customer|any
   public num=5.5
-  constructor(private orderService:OrderService,private router:Router) { }
+  public url:String|any
+  constructor(private orderService:OrderService,private router:Router,private addressService:AddressService,private customerService:CustomerService) { }
   ProcessOrderForm=new FormGroup({
     modeOfPayment:new FormControl(''),
   })
   ngOnInit(): void {
     this.order=localStorage.getItem('order')
-    console.log(this.order)
     this.orderDetail=JSON.parse(this.order)
     console.log(this.orderDetail)
-    this.totalAmount;
+    this.url='http://localhost:8083/api/get-bill/pdf/'+`${this.orderDetail.orderId}`
+    this.phoneNumber=localStorage.getItem('phoneNo')
+    console.log(this.phoneNumber)
+    this.customerService.getCustomerById(this.phoneNumber).subscribe(data=>{
+      this.customer=data
+      console.log(this.customer)
+      this.addressService.get(this.phoneNumber).subscribe(data=>{
+        this.address=data
+        console.log(this.address)
+        console.log(this.address[0].addressLine)
+        console.log(this.address[0].city)
+        console.log(this.address[0].pinCode)
+      })
+    })
+    
   }
   processOrder()
   {

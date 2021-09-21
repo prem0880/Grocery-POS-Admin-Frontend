@@ -2,29 +2,31 @@
 <div class="container-fluid mb-3">
     <h3 style="text-align: center;"><b><i>Add order</i></b></h3>
     <form [formGroup]="AddOrderForm" (ngSubmit)="addOrderItem()">
-        <table id="addOrder" class="table table-striped">
+        <table id="addOrder" class="table table-bordered">
             <tr>
             <th>Products</th>
-            <td><select style="width: 190px; height: 50px;" name="product" (ngModelChange)="getavailability($event)"  formControlName="productName">
+            <td><select class="form-control" class="custom-select" style="width: 190px; height: 50px;" name="product" (ngModelChange)="getavailability($event)"  formControlName="productName">
                 <option value="" selected>Select the product</option>
                 <option *ngFor="let product of productList" [value]=product.id>{{product.name}}</option>
             </select></td>
             </tr>
             <tr>
-                <th>Stock</th><td><input type="text" name="stock" value={{product?.stock}} placeholder="Available Stock" readonly="true"></td>
+                <th>Stock</th>
+                <td><input type="text" class="form-control" name="stock" value={{product?.stock}} placeholder="Available Stock" readonly="true"></td>
             </tr>
             <tr>
                 <th>Price Per Unit</th>
-                <td><input type="text" name="stock" value={{product?.mrp}} placeholder="Price per unit" readonly="true"></td>
+                <td><input type="text" class="form-control" name="stock" value={{product?.mrp}} placeholder="Price per unit" readonly="true"></td>
             </tr>
             <tr>
                 <th>Enter the Quantity</th>
-                <td><input type="number" name="quantity" formControlName="quantity" placeholder="Choose the quantity from available stock"></td>
+                <td><input type="number" class="form-control" name="quantity" formControlName="quantity" placeholder="Choose the quantity from available stock"></td>
             </tr>
-            <tr>
-                <td><button class="btn btn-info">Add Item</button>&nbsp;&nbsp;<button class="btn btn-danger" type="reset">Reset</button></td>
-            </tr>
+            <!-- <tr>
+                <td></td>
+            </tr> -->
         </table>
+        <button class="btn btn-info" style="margin-left: 12cm;" type="submit">Add Item</button>&nbsp;&nbsp;<button class="btn btn-danger" type="reset" value="Reset">Reset</button><br>
         <table *ngIf='length>0' class="table table-bordered">
         <caption style="text-align: center;"><b><i>Order Item Details</i></b></caption>
             <tr>
@@ -44,7 +46,7 @@
                 <td>{{order?.totalPrice | number:'1.2-3'}}</td>
             </tr>
             <tr>
-                <td colspan="4"><button id="btn1" (click)="goToPayment()"  class="btn btn-info">Confirm Order</button>&nbsp;&nbsp;<button id="btn2" class="btn btn-info" type="reset">Cancel</button></td>
+                <td colspan="4"><button id="btn1" (click)="goToPayment()"  class="btn btn-primary">Confirm Order</button>&nbsp;&nbsp;<button id="btn2" class="btn btn-info" type="reset">Cancel</button></td>
             </tr>
         </table>
     </form>

@@ -10,5 +10,10 @@ caption{
 }
 #addOrder{
     height:100%;
-    width:80%
+    width:80%;
+    /* margin-left: 80px;
+    margin-right: 40px; */
 }
+/* #addOrder>td{
+    padding: px;
+} */

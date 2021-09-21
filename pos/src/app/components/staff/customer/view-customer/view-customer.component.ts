@@ -32,7 +32,8 @@ export class ViewCustomerComponent implements OnInit {
       this.display=true;
       console.log(this.viewcustomer);
       this.phn = id.phoneNumber;
-
+      localStorage.setItem('phoneNo',id.phoneNumber)
+      console.log(id.phoneNumber)
   },
   error=>{
     this.display=false;
