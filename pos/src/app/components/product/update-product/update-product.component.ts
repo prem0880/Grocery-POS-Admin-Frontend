@@ -12,6 +12,7 @@ export class UpdateProductComponent implements OnInit {
 
   public category:any=[];
   public categoryObj: any=[] ;
+  public product:Product=new Product;
   id:any;
 
   constructor(private router : Router,private categoryService:CategoryService,private productService:ProductService) {
@@ -20,27 +21,39 @@ export class UpdateProductComponent implements OnInit {
       id : any
     };
     this.id = state.id;
+    
    }
 
   ngOnInit(): void {
     this.categoryService.getAllCategory().subscribe( response => {
       this.category = response;
+     
   });
+  this.productService.getProductById(this.id).subscribe(data=>{
+     
+        this.product=data;
+       
+  },error=>window.alert(error.error)
+  );
   }
 
   getCategory(cid:number){
 
     this.categoryObj={"id":cid};
-    console.log(this.categoryObj);
+   
     
     }
 
   updateProduct(product:Product) {
     this.getCategory(product.category as any as number);
+    product.mrp=this.product.mrp;
+    product.stock=this.product.stock;
+    product.tax=this.product.tax;
     product.category=this.categoryObj;
-    console.log(product);
+   
     this.productService.updateProduct(this.id,product).subscribe((response) => {
       window.alert(response);
+      this.router.navigate(['/manageProduct']);
     })
   }
 

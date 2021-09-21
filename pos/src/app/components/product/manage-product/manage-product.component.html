@@ -19,7 +19,7 @@
             <tr *ngFor="let viewproduct of viewProduct">
                 <td>{{viewproduct.id}}</td>
                 <td>{{viewproduct.name}}</td>
-                <td>{{viewproduct.image}}</td>
+                <td><img [src]="viewproduct.image" alt="image not loaded" width="200px" height="200px"></td>
                 <td>{{viewproduct.brand}}</td>
                 <td>{{viewproduct.mrp}}</td>
                 <td>{{viewproduct.description}}</td>

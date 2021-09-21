@@ -18,16 +18,17 @@ export class ManageCategoryComponent implements OnInit {
   ngOnInit():any {
     this.categoryService.getAllCategory().subscribe( response => {
       this.viewCategory = response;
-      console.log(this.viewCategory);
+     
   });
   }
 
   deleteCategory(id:number) {
     this.categoryService.deleteCategory(id).subscribe(response => {
-          console.log(response);
+         
           window.alert(response);
-          
-  });
+          this.router.navigate(['/viewCategory']);
+  },error=> window.alert(error.error)
+  );
   }
 
   updateCategory(id:number) {

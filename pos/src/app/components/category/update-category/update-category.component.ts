@@ -10,7 +10,7 @@ import { Category, CategoryService } from 'src/app/services/category/category.se
 export class UpdateCategoryComponent implements OnInit {
 
   id?:any;
-
+  category:Category=new Category;
   constructor(private router:Router,private categoryService:CategoryService) { 
     const navigation = this.router.getCurrentNavigation();
     const state = navigation?.extras.state as {
@@ -18,16 +18,22 @@ export class UpdateCategoryComponent implements OnInit {
       
     };
     this.id = state.id;
-    console.log(this.id);
+  
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategoryById(this.id).subscribe(data=>{
+      this.category=data;
+    },
+    error=>window.alert(error.error)
+    );
   }
 
   updateCategory(category : Category) {
-    console.log(category);
+   
     this.categoryService.updateCategory(this.id,category).subscribe((response) => {
       window.alert(response);
+      this.router.navigate(['/viewCategory']);
     })
   }
 }

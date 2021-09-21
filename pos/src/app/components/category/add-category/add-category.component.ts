@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category, CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
@@ -8,15 +9,16 @@ import { Category, CategoryService } from 'src/app/services/category/category.se
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor(private categoryService:CategoryService) { }
+  constructor(private categoryService:CategoryService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
   addCategory(category : Category) {
-    console.log(category);
+   
     this.categoryService.createCategory(category).subscribe((response) => {
       window.alert(response);
+      this.router.navigate(['/viewCategory']);
     })
   }
 

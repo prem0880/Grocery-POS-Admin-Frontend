@@ -3,6 +3,7 @@ import { Product, ProductService } from 'src/app/services/product/product.servic
 import { VendorService } from 'src/app/vendor.service';
 import { Vendor } from 'src/app/vendor';
 import { Inventory, InventoryService } from 'src/app/services/inventory/inventory.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-inventory',
@@ -14,7 +15,7 @@ export class AddInventoryComponent implements OnInit {
   public product : any=[];
   public vendor : any=[]
 
-  constructor(private productService : ProductService, private vendorService : VendorService, private inventoryService : InventoryService) { }
+  constructor(private productService : ProductService, private vendorService : VendorService, private inventoryService : InventoryService,private router:Router) { }
 
   ngOnInit(): void {
     this.productService.getAllProduct().subscribe((response) => {
@@ -32,6 +33,7 @@ export class AddInventoryComponent implements OnInit {
     console.log(productRequest);
     this.inventoryService.createInventory(productRequest).subscribe((res)=>{
       window.alert(res);
+      this.router.navigate(['/viewinventory']);
     });
   }
 }

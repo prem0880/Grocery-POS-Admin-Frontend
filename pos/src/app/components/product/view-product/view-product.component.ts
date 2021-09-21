@@ -17,7 +17,7 @@ export class ViewProductComponent implements OnInit {
     for(let p of this.viewInventory){
       this.viewProductExpiredDates.push(p.product.name);
     }
-    console.log(this.viewProductExpiredDates);
+   
   }
 
   public today:Date=new Date();
@@ -26,7 +26,7 @@ export class ViewProductComponent implements OnInit {
   ngOnInit(): any {
     this.productService.getAllProduct().subscribe( response => {
       this.viewProduct = response;
-      console.log(this.viewProduct);
+     
   });
   this.inventoryService.getAllInventory().subscribe(data=>{
     this.viewInventory=data;
