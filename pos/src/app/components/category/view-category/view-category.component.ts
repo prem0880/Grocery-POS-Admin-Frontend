@@ -16,7 +16,7 @@ export class ViewCategoryComponent implements OnInit {
   ngOnInit():any {
     this.categoryService.getAllCategory().subscribe( response => {
       this.viewCategory = response;
-      console.log(this.viewCategory);
+     
   });
   }
 

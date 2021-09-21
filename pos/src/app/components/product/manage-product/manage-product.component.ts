@@ -23,6 +23,7 @@ export class ManageProductComponent implements OnInit {
     this.productService.deleteProduct(id,categoryId).subscribe(response => {
           console.log(response);
           window.alert(response);
+          this.router.navigate(['/viewProduct']);
   });
   }
 

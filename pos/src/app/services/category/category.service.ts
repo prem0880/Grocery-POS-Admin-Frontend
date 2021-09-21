@@ -11,9 +11,9 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  createCategory(category : Category){
-
-    return this.http.post(`${this.baseUrl}`, category,{responseType: 'text'});
+  createCategory(category : Category) : Observable<any>{
+    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.http.post(`${this.baseUrl}`, category,{ headers,responseType: 'text'});
   }
 
 
@@ -21,15 +21,17 @@ export class CategoryService {
     return this.http.get<Category>(`${this.baseUrl}`);
   }
 
-  deleteCategory(id:number){
+  getCategoryById(id:number) : Observable<any>{
+    return this.http.get<Category>(`${this.baseUrl}/${id}`);
+  }
+
+  deleteCategory(id:number): Observable<any>{
     console.log(id);
-    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.http.delete(`${this.baseUrl}/${id}`, { headers, responseType: 'text'});
+    return this.http.delete(`${this.baseUrl}/${id}`,{ responseType: 'text'});
   }
 
   updateCategory(id:number,category:Category){
-    console.log(id);
-    console.log(category);
+   
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.http.put(`${this.baseUrl}/${id}`, category, { headers, responseType: 'text'});
   }
