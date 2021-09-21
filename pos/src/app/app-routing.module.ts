@@ -79,7 +79,7 @@ const routes: Routes = [
   {path:'staff',component:DashboardComponent},
   {path:'add-order/:id',component:AddOrderComponent},
   {path:'process-order',component:ProcessOrderComponent},
-  {path:'**',component:IndexcomponentComponent}
+  {path:'**',component:IndexcomponentComponent},
 ];
 
 @NgModule({

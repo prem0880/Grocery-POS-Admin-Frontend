@@ -35,7 +35,13 @@ export class AddAddressComponent implements OnInit {
     value.pinCode = Number(value.pinCode);
     this.addressSer.create(value, this.id as any as number).subscribe((res)=>{
       window.alert(res);
-    })
-  }
+      this.gotoList();
+    },
+    error => window.alert(error.error)
+    );
 
+  }
+  gotoList() {
+    this.router.navigate(['/viewcustomer']);
+  }
 }

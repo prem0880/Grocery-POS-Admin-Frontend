@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CountryService } from 'src/app/services/country/country.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CountryService } from 'src/app/services/country/country.service';
 })
 export class AddCountryComponent implements OnInit {
 
-  constructor(private service : CountryService) { }
+  constructor(private service : CountryService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +17,13 @@ export class AddCountryComponent implements OnInit {
   save(country:any) {
     this.service.create(country).subscribe((res)=>{
       window.alert(res);
-    })
+      this.gotoList();
+    },
+    error => window.alert(error.error)
+    );
+  }
+
+  gotoList() {
+    this.router.navigate(['/viewcountry']);
   }
 }

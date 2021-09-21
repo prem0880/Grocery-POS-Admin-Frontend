@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/services/staff/order/order';
 import { OrderService } from 'src/app/services/staff/order/order.service';
 
@@ -15,12 +16,13 @@ export class ProcessOrderComponent implements OnInit {
   public orderDetails:Order|any
   public totalAmount:Number|any
   public num=5.5
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService:OrderService,private router:Router) { }
   ProcessOrderForm=new FormGroup({
     modeOfPayment:new FormControl(''),
   })
   ngOnInit(): void {
     this.order=localStorage.getItem('order')
+    console.log(this.order)
     this.orderDetail=JSON.parse(this.order)
     console.log(this.orderDetail)
     this.totalAmount;
@@ -38,4 +40,6 @@ export class ProcessOrderComponent implements OnInit {
       window.alert(response)
     })
   }
+
+  
 }

@@ -1,12 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Order } from './order';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private baseUrl='http://localhost:8081/api'
+  private baseUrl='http://localhost:8083/api'
   constructor(private http:HttpClient) { }
   addOrder(customerId:number,addressId:number,order:object):Observable<any>
   {
@@ -24,12 +25,15 @@ export class OrderService {
   {
     return this.http.get(`${this.baseUrl}`+'/order-item/get-items/'+`${orderId}`)
   }
-  getOrderById(orderId:number):Observable<any>
+  getOrderById(orderId:number):Observable<any> 
   {
-    return this.http.get(`${this.baseUrl}`+'/get-order/'+`${orderId}`)
+    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.http.get<Order>(`${this.baseUrl}`+'/get-order/'+`${orderId}`)
   }
   updateOrder(orderId:number,order:object):Observable<any>
   {
     return this.http.put(`${this.baseUrl}`+'/update-order/'+`${orderId}`,order,{responseType:'text'})
   }
+
+  
 }

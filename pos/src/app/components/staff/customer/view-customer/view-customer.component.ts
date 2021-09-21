@@ -19,10 +19,11 @@ export class ViewCustomerComponent implements OnInit {
   public order : any;
   public phn : any;
   public addr : any;
+
   constructor(private customerService:CustomerService, private orderService : OrderService, private addrServ : AddressService, private router : Router) { }
 
   ngOnInit():void {
-
+      
   }
 
   getCustomerById(id:any){
@@ -31,8 +32,14 @@ export class ViewCustomerComponent implements OnInit {
       this.display=true;
       console.log(this.viewcustomer);
       this.phn = id.phoneNumber;
+
+  },
+  error=>{
+    this.display=false;
+    window.alert(error.error)
   });
-  }
+}
+
   addorderbutton() {
     this.order=new Order();
     this.addrServ.get(this.phn).subscribe((res)=>{

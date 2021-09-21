@@ -17,6 +17,6 @@
             <input type="email" class="form-control" name="email" placeholder="Enter Customer Email"  ngModel required>
           </div>
           <br>
-      <button type="submit" style="margin-left: 150px;" class="btn btn-primary">Create</button>
+      <button type="submit" style="margin-left: 150px;" [disabled]="userForm.invalid" class="btn btn-primary">Add Customer</button>
       </form>
 </div>

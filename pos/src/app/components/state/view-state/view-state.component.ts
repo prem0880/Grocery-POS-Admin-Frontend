@@ -11,6 +11,7 @@ export class ViewStateComponent implements OnInit {
 
   public country : any=[];
   public state : any=[];
+  public display:boolean=false;
   constructor(private service : StateService, private countryService : CountryService) { }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class ViewStateComponent implements OnInit {
   getState(country:any) {
     this.service.get(country.id).subscribe((res)=>{
       this.state = res;
+      this.display=true;
     })
   }
 }

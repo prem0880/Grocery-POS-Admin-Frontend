@@ -9,6 +9,7 @@ import { InventoryService } from 'src/app/services/inventory/inventory.service';
 export class ViewInventoryByProductNameComponent implements OnInit {
 
   public inventory : any=[];
+  public display:boolean=false;
   constructor(private inventService : InventoryService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,9 @@ export class ViewInventoryByProductNameComponent implements OnInit {
     this.inventService.getInventoryByName(value.name).subscribe((res)=>{
       console.log(res);
       this.inventory = res;
-    });
+      if(this.inventory.length>0)
+      {
+      this.display=true;
+    }});
   }
 }
