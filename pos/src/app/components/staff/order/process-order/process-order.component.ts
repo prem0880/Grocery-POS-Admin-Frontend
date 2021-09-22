@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Address } from 'src/app/services/address/address';
 import {  AddressService } from 'src/app/services/address/address.service';
@@ -21,9 +21,10 @@ export class ProcessOrderComponent implements OnInit {
   public customer:Customer|any
   public num=5.5
   public url:String|any
+  public shouldPdf:boolean=true;
   constructor(private orderService:OrderService,private router:Router,private addressService:AddressService,private customerService:CustomerService) { }
   ProcessOrderForm=new FormGroup({
-    modeOfPayment:new FormControl(''),
+    modeOfPayment:new FormControl('',Validators.required),
   })
   ngOnInit(): void {
     this.order=localStorage.getItem('order')
@@ -56,7 +57,12 @@ export class ProcessOrderComponent implements OnInit {
     this.orderService.updateOrder(this.orderDetail.orderId,this.orderDetails).subscribe(response=>{
       console.log(response)
       window.alert(response)
+      this.shouldPdf=false;
     })
+  }
+
+  get modeOfPayment(){
+    return this.ProcessOrderForm.get('modeOfPayment');
   }
 
   

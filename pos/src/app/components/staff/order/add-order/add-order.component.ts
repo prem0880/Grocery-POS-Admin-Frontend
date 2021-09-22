@@ -29,6 +29,7 @@ export class AddOrderComponent implements OnInit {
   public orderedItems:Observable<OrderItem[]>|any
   public length:number|any
   public id : any;
+  public quantity:any;
   ngOnInit(): void {
     this.productService.getAllProduct().subscribe(data=>{
       console.log(data)
@@ -70,7 +71,8 @@ export class AddOrderComponent implements OnInit {
     localStorage.setItem("order",JSON.stringify(this.order))
     this.router.navigate(['process-order'])
   }
-  get quantity(){
-      return this.AddOrderForm.get('quantity');
+  setQuantity(){
+     this.quantity=this.AddOrderForm.get('quantity')?.value;
+
   }
 }

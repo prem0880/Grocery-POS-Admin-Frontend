@@ -1,7 +1,7 @@
 <app-dashboard></app-dashboard>
 <div class="container-fluid mb-3">
     <h3 style="text-align: center;"><b><i>Add order</i></b></h3>
-    <form [formGroup]="AddOrderForm" (ngSubmit)="addOrderItem()">
+    <form [formGroup]="AddOrderForm" (ngSubmit)="addOrderItem()" #userForm="ngForm">
         <table id="addOrder" class="table table-bordered">
             <tr>
             <th>Products</th>
@@ -20,18 +20,20 @@
             </tr>
             <tr>
                 <th>Enter the Quantity</th>
-                <td><input type="number" class="form-control" name="quantity" formControlName="quantity"  placeholder="Choose the quantity from available stock" ></td>
+                <td><input type="number" class="form-control" name="quantity" formControlName="quantity" (keyup)="setQuantity()"  placeholder="Choose the quantity from available stock" ></td>
             </tr>
-            <small *ngIf="product?.stock==0" class="text-warning">
-                * stock is empty
-            </small>
-            <!-- <small *ngIf=">product?.stock" class="text-danger">
-                * entered quantity is greater than available stock
-            </small> -->
             
-
         </table>
-        <button class="btn btn-info" style="margin-left: 12cm;" [disabled]="product?.stock ==0" type="submit">Add Item</button><br>
+        <div>
+        <small style="margin-left: 12cm" *ngIf="product?.stock==0" class="text-danger">
+            * stock is empty
+        </small>
+        <small style="margin-left: 12cm"  *ngIf="product?.stock < quantity && product?.stock!=0" class="text-danger">
+            * entered quantity is greater than available stock
+        </small>
+        <br><br>
+    </div>
+        <button class="btn btn-info" style="margin-left: 12cm;" [disabled]="product?.stock ==0 || product?.stock < quantity" type="submit">Add Item</button><br>
         <table *ngIf='length>0' class="table table-bordered">
         <caption style="text-align: center;"><b><i>Order Item Details</i></b></caption>
             <tr>
@@ -50,9 +52,11 @@
                 <th colspan="3">Total Amount</th>
                 <td>{{order?.totalPrice | number:'1.2-3'}}</td>
             </tr>
-            <tr>
-                <td colspan="4"><button id="btn1" (click)="goToPayment()"  class="btn btn-primary">Confirm Order</button>&nbsp;&nbsp;<button id="btn2" class="btn btn-info" type="reset">Cancel</button></td>
-            </tr>
+           
         </table>
+        <div *ngIf='length>0'>
+            <button id="btn1" (click)="goToPayment()"  class="btn btn-primary">Confirm Order</button>&nbsp;&nbsp;<button id="btn2" class="btn btn-info" type="reset">Cancel</button>
+        </div>
+       
     </form>
 </div>

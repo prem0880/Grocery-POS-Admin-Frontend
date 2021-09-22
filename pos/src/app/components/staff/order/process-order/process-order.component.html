@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <th>Mode of Payment</th>
-                <td><select class="custom-select" name="modeOfPayment" formControlName="modeOfPayment">
+                <td><select class="custom-select" name="modeOfPayment"  formControlName="modeOfPayment" required>
                     <option value="" selected>Select the payment option</option>
                     <option>Cash</option>
                     <option>Credit card</option>
@@ -45,8 +45,16 @@
                     <option>Sodexo food card</option>
                 </select></td>
             </tr>
+        
+         
         </table>
-        <button style="margin-left: 12cm" class="btn btn-info">Proceed</button>&nbsp;&nbsp;<button class="btn btn-danger" type="reset">Cancel</button><br><br>
-        <button style="margin-left: 12cm" class="btn btn-info" type="submit" ><a href={{url}}>Generate Receipt</a></button>
+        <small style="margin-left: 12cm;">
+            <small *ngIf="modeOfPayment?.invalid &&(modeOfPayment?.touched||modeOfPayment?.dirty)">
+                <small class="alert alert-danger" *ngIf="modeOfPayment?.errors?.required" >* mode of payment is required</small>
+            </small>
+            <br><br>
+        </small>
+        <button style="margin-left: 12cm" [disabled]="modeOfPayment?.invalid" class="btn btn-info">Proceed</button>&nbsp;&nbsp; <button [disabled]="shouldPdf" class="btn btn-success" type="submit" ><a href={{url}}>Generate Receipt</a></button><br>
+
     </form>
 </div>
