@@ -47,6 +47,7 @@ import { AddAddressComponent } from './components/staff/address/add-address/add-
 import { AddOrderComponent } from './components/staff/order/add-order/add-order.component';
 import { ProcessOrderComponent } from './components/staff/order/process-order/process-order.component';
 import { IndexcomponentComponent } from './components/indexcomponent/indexcomponent.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { IndexcomponentComponent } from './components/indexcomponent/indexcompon
     AddAddressComponent,
     AddOrderComponent,
     ProcessOrderComponent,
-    IndexcomponentComponent
+    IndexcomponentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

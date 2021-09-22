@@ -21,6 +21,7 @@ import { ViewInventoryByPriceComponent } from './components/inventory/view-inven
 import { ViewInventoryByProductNameComponent } from './components/inventory/view-inventory-by-product-name/view-inventory-by-product-name.component';
 import { ViewInventoryByQuantityComponent } from './components/inventory/view-inventory-by-quantity/view-inventory-by-quantity.component';
 import { ViewInventoryComponent } from './components/inventory/view-inventory/view-inventory.component';
+import { LoginComponent } from './components/login/login.component';
 import { AddProductComponent } from './components/product/add-product/add-product.component';
 import { ManageProductComponent } from './components/product/manage-product/manage-product.component';
 import { UpdateProductComponent } from './components/product/update-product/update-product.component';
@@ -59,7 +60,7 @@ const routes: Routes = [
   {path:"viewinventorybyquantity",component:ViewInventoryByQuantityComponent},
   {path:"viewbyprice",component:ViewInventoryByPriceComponent},
   {path:"viewbydate",component:ViewInventoryByDateComponent},
-  { path: '', redirectTo: 'vendor', pathMatch: 'full' },
+  // { path: '', redirectTo: 'vendor', pathMatch: 'full' },
   { path: 'viewvendors', component: VendorListComponent },
   { path: 'addvendors', component: CreateVendorComponent },
   { path: 'update/:id', component: UpdateVendorComponent },
@@ -78,8 +79,10 @@ const routes: Routes = [
   {path:'viewcustomer',component:ViewCustomerComponent},
   {path:'staff',component:DashboardComponent},
   {path:'add-order/:id',component:AddOrderComponent},
+  {path:'login',component:LoginComponent},
   {path:'process-order',component:ProcessOrderComponent},
-  {path:'**',component:IndexcomponentComponent},
+ {path:'**',component:IndexcomponentComponent},
+ 
 ];
 
 @NgModule({
