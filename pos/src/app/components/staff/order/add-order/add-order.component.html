@@ -12,7 +12,7 @@
             </tr>
             <tr>
                 <th>Stock</th>
-                <td><input type="text" class="form-control" name="stock" value={{product?.stock}} placeholder="Available Stock" readonly="true"></td>
+                <td><input type="text" class="form-control" name="stock" value={{product?.stock}}  placeholder="Available Stock" readonly="true"></td>
             </tr>
             <tr>
                 <th>Price Per Unit</th>
@@ -20,13 +20,18 @@
             </tr>
             <tr>
                 <th>Enter the Quantity</th>
-                <td><input type="number" class="form-control" name="quantity" formControlName="quantity" placeholder="Choose the quantity from available stock"></td>
+                <td><input type="number" class="form-control" name="quantity" formControlName="quantity"  placeholder="Choose the quantity from available stock" ></td>
             </tr>
-            <!-- <tr>
-                <td></td>
-            </tr> -->
+            <small *ngIf="product?.stock==0" class="text-warning">
+                * stock is empty
+            </small>
+            <!-- <small *ngIf=">product?.stock" class="text-danger">
+                * entered quantity is greater than available stock
+            </small> -->
+            
+
         </table>
-        <button class="btn btn-info" style="margin-left: 12cm;" type="submit">Add Item</button>&nbsp;&nbsp;<button class="btn btn-danger" type="reset" value="Reset">Reset</button><br>
+        <button class="btn btn-info" style="margin-left: 12cm;" [disabled]="product?.stock ==0" type="submit">Add Item</button><br>
         <table *ngIf='length>0' class="table table-bordered">
         <caption style="text-align: center;"><b><i>Order Item Details</i></b></caption>
             <tr>

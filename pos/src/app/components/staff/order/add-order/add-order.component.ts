@@ -70,4 +70,7 @@ export class AddOrderComponent implements OnInit {
     localStorage.setItem("order",JSON.stringify(this.order))
     this.router.navigate(['process-order'])
   }
+  get quantity(){
+      return this.AddOrderForm.get('quantity');
+  }
 }
